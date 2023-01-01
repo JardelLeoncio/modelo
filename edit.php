@@ -134,7 +134,7 @@ footer{
 </head>
 <body>
     <header>
-        <h1>Entrada de Dados</h1>
+        <h1>Edição de Dados</h1>
     </header>
     <div id="banco_dados">
         <nav>
