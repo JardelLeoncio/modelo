@@ -4,14 +4,12 @@
     
         include_once('config.php');
 
-        $hibrido = $_POST['hibrido'];
-        $silo = $_POST['silo'];
-        $peneira = $_POST['peneira'];
-        $mesa = $_POST['mesa'];
-        $turno = $_POST['turno'];
+        $hibrido = $_POST['fluxo'];
+        $silo = $_POST['descarte'];
+        $turno = $_POST['tempo'];
         
 
-        $result = mysqli_query($conexao, "INSERT INTO registro(hibrido,silo,peneira,mesa,turno, data) VALUES ('$hibrido','$silo','$peneira','$mesa','$turno', now())");
+        $result = mysqli_query($conexao, "INSERT INTO registro(fluxo,silo, data) VALUES ('$hibrido','$silo','$peneira','$mesa','$turno', now())");
     }
 
 ?>
@@ -133,38 +131,26 @@ footer{
     <div class="box">
         <form action="cadastro.php" method="POST">
             <fieldset>
-                <legend>Registro de Dados</legend>
+                <legend>Teste de Mesa</legend>
                 <br>
                 <div class="inputBox">
-                    <input type="text" name="hibrido" id="hibrido" class="inputRes" required>
-                    <label for="hibrido" class="labelInput">Híbrido</label>
+                    <input type="text" name="fluxo" id="fluxo" class="inputRes" required>
+                    <label for="fluxo" class="labelInput">Fluxo</label>
                 </div>
                 <br>
                 <div class="inputBox">
-                    <input type="text" name="silo" id="silo" class="inputRes" required>
-                    <label for="silo" class="labelInput">Silo</label>
-                </div>
-                <br>
-                <div class="inputBox">
-                    <input type="text" name="peneira" id="peneira" class="inputRes" required>
-                    <label for="peneira" class="labelInput">Peneira</label>
-                </div>
-                <br>
-                <div class="inputBox">
-                    <input type="text" name="mesa" id="mesa" class="inputRes" required>
-                    <label for="mesa" class="labelInput">Mesa</label>
+                    <input type="text" name="descarte" id="descarte" class="inputRes" required>
+                    <label for="descarte" class="labelInput">Descarte</label>
                 </div>
                 <div>
-                    <p>Turno:</p>
-                <input type="radio" name="turno" id="um" value="1°" required>
-                <label for="um" class="labelRadio">1°</label>
+                <p>Tempo:</p>
+                <input type="radio" name="tempo" id="tempo1" value="60" required>
+                <label for="tempo1" class="labelRadio">60</label>
+                <input type="radio" name="tempo" id="tempo2" value="15" required>
+                <label for="tempo2" class="labelRadio">15</label>
+                <input type="radio" name="tempo" id="tempo3" value="6" required>
+                <label for="tempo3" class="labelRadio">6</label>
                 <br>
-                <input type="radio" name="turno" id="dois" value="2°" required>
-                <label for="dois" class="labelRadio">2°</label>
-                <br>
-                <input type="radio" name="turno" id="tres" value="3°" required>
-                <label for="tres" class="labelRadio">3°</label>
-                </div>
                 <br>
                 <div>
                     <input type="submit" value="Enviar" name="submit" id="submit">

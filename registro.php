@@ -44,6 +44,9 @@
         .table-light{
             color: aqua;
         }
+        .table-colun{
+            border-radius: 15px 15px 0 0;
+        }
         .box-search{
             display: flex;
             justify-content: center;
@@ -74,7 +77,7 @@
     </div class="m-5">
         <table class="table table-bg">
             <thead class="table-light">
-                <tr>
+                <tr class="table-colun">
                     <th scope="col" class="coluna">#</th>
                     <th scope="col" class="coluna">Híbrido</th>
                     <th scope="col" class="coluna">Silo</th>
@@ -82,6 +85,7 @@
                     <th scope="col" class="coluna">Mesa</th>
                     <th scope="col" class="coluna">Turno</th>
                     <th scope="col" class="coluna">Data</th>
+                    <th scope="col" class="coluna">Inserir</th>
                     <th scope="col" class="coluna">...</th>
                 </tr>
             </thead>
@@ -96,6 +100,19 @@
                         echo "<td>" . $user_data['mesa'] . "</td>";
                         echo "<td>" . $user_data['turno'] . "</td>";
                         echo "<td>" . $user_data['data'] . "</td>";
+                        echo "<td><a class='btn btn-sm btn-primary' href='dados_mesa.php?id=$user_data[id]'>
+                        <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-pencil-square' viewBox='0 0 16 16'>
+                        <path d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z'/>
+                        <path fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z'/>
+                        </svg>
+                        </a>
+                        <a class='btn btn-sm btn-primary' href='#?id=$user_data[id]'>
+                        <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-layout-text-sidebar' viewBox='0 0 16 16'>
+                        <path d='M3.5 3a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM3 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z'/>
+                        <path d='M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm12-1v14h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zm-1 0H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h9V1z'/>
+                        </svg>
+                        </a>
+                        </td>";
                         echo "<td>
                             <a class='btn btn-sm btn-primary' href='edit.php?id=$user_data[id]'>
                                 <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-pencil' viewBox='0 0 16 16'>
