@@ -1,18 +1,3 @@
-<?php
-
-    if(isset($_POST['submit'])){
-    
-        include_once('config.php');
-
-        $hibrido = $_POST['fluxo'];
-        $silo = $_POST['descarte'];
-        $turno = $_POST['tempo'];
-        
-
-        $result = mysqli_query($conexao, "INSERT INTO registro(fluxo,silo, data) VALUES ('$hibrido','$silo','$peneira','$mesa','$turno', now())");
-    }
-
-?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -129,7 +114,7 @@ footer{
         </nav>
     </div>
     <div class="box">
-        <form action="cadastro.php" method="POST">
+        <form action="saveTeste.php" method="POST">
             <fieldset>
                 <legend>Teste de Mesa</legend>
                 <br>
@@ -146,9 +131,9 @@ footer{
                 <p>Tempo:</p>
                 <input type="radio" name="tempo" id="tempo1" value="60" required>
                 <label for="tempo1" class="labelRadio">60</label>
-                <input type="radio" name="tempo" id="tempo2" value="15" required>
+                <input type="radio" name="tempo" id="tempo2" value="240" required>
                 <label for="tempo2" class="labelRadio">15</label>
-                <input type="radio" name="tempo" id="tempo3" value="6" required>
+                <input type="radio" name="tempo" id="tempo3" value="600" required>
                 <label for="tempo3" class="labelRadio">6</label>
                 <br>
                 <br>

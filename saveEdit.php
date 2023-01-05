@@ -2,7 +2,7 @@
 
     include_once('config.php');
 
-    if($_POST['update']){
+    if(isset($_POST['update'])){
         $id = $_POST['id'];
         $hibrido = $_POST['hibrido'];
         $silo = $_POST['silo'];
