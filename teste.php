@@ -6,7 +6,10 @@
 
     $sql = "SELECT * FROM registro_mesa join registro on registro.id = registro_mesa.id_id WHERE registro.id=$id";
 
+    $sql_table01 = "SELECT * FROM registro WHERE id=$id";
+
     $result = $conexao->query($sql);
+    $result01 = $conexao->query($sql_table01);
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -37,20 +40,24 @@
         }
         .table-bg{
             background: rgba(0, 0, 0, 0.3);
-            border-radius: 15px 15px 0 0;
-            margin: auto;
         }
         .table-light{
             color: aqua;
         }
-        .table-colun{
+        .th{
+            margin: 0 3rem!important;
+            background-color: black;
             border-radius: 15px 15px 0 0;
+
         }
-        .box-search{
-            display: flex;
-            justify-content: center;
-            gap: .1;
-            margin: 30px;
+        .m-5{
+            margin: 0 3rem!important;
+        }
+        .table{
+            margin: 0px;
+        }
+        .sub_th{
+            color: orange;
         }
     </style>
 </head>
@@ -65,11 +72,26 @@
             Teste de Mesa
         </h1>
     </div>
-    <div class="print">
-        <input type="hidden" name="id" value="<?php echo $id ?>">
+    <div class="th">
+        <table class="table">
+               <thead class="table-column">
+                <?php
+                while($user_data = mysqli_fetch_assoc($result01)){
+                    echo "<tr>";
+                    echo "<th class='sub_th'>Híbrido: " . $user_data['hibrido'] . "</td>";
+                    echo "<th class='sub_th'>Silo: " . $user_data['silo'] . "</td>";
+                    echo "<th class='sub_th'>Peneira: " . $user_data['peneira'] . "</td>";
+                    echo "<th class='sub_th'>Mesa: " . $user_data['mesa'] . "</td>";
+                    echo "<th class='sub_th'>Turno: " . $user_data['turno'] . "</td>";
+                    echo "</tr>";
+                }
+            ?>
+            </thead>
+        </table>
     </div>
     <div class="m-5">
         <table class="table table-bg">
+
             <thead class="table-light">
                 <tr class="table-colun">
                     <th scope="col" class="coluna">#</th>

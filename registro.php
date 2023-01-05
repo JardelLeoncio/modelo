@@ -80,7 +80,7 @@
                     <th scope="col" class="coluna">Mesa</th>
                     <th scope="col" class="coluna">Turno</th>
                     <th scope="col" class="coluna">Data</th>
-                    <th scope="col" class="coluna">Inserir/Visualizar</th>
+                    <th scope="col" class="coluna">Inserir/Teste</th>
                     <th scope="col" class="coluna">...</th>
                 </tr>
             </thead>

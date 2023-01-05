@@ -9,9 +9,10 @@
         $peneira = $_POST['peneira'];
         $mesa = $_POST['mesa'];
         $turno = $_POST['turno'];
+        $data = date('d/m/Y');
         
 
-        $result = mysqli_query($conexao, "INSERT INTO registro(hibrido,silo,peneira,mesa,turno, data) VALUES ('$hibrido','$silo','$peneira','$mesa','$turno', now())");
+        $result = mysqli_query($conexao, "INSERT INTO registro(hibrido,silo,peneira,mesa,turno, data) VALUES ('$hibrido','$silo','$peneira','$mesa','$turno','$data')");
     }
 
 ?>
