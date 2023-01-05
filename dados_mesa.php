@@ -1,3 +1,16 @@
+<?php
+
+    if(!empty($_GET['id'])){
+    
+        include_once('config.php');
+
+        $id = $_GET['id'];
+
+    }else{
+        header('Location: registro.php');
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -89,7 +102,7 @@ footer{
 #tres{
     cursor: pointer;
 }
-#submit{
+#Salvar{
     background-image: linear-gradient(to right, rgb(7, 163, 224), rgb(26, 26, 151));
     width: 100%;
     border: none;
@@ -99,7 +112,7 @@ footer{
     cursor: pointer;
     border-radius: 10px;
 }
-#submit:hover{
+#Salvar:hover{
     background-image: linear-gradient(to right, rgb(6, 137, 189), rgb(17, 17, 94));
 }
     </style>
@@ -138,7 +151,8 @@ footer{
                 <br>
                 <br>
                 <div>
-                    <input type="submit" value="Enviar" name="submit" id="submit">
+                    <input type="hidden" name="id" value="<?php echo $id ?>">
+                    <input type="submit" value="Salvar" name="Salvar" id="Salvar">
                 </div>
                 
             </fieldset>
