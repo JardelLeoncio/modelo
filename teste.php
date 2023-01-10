@@ -42,7 +42,7 @@
             background: rgba(0, 0, 0, 0.3);
         }
         .table-light{
-            color: aqua;
+            color: black;
         }
         .th{
             margin: 0 3rem!important;
@@ -58,6 +58,9 @@
         }
         .sub_th{
             color: orange;
+        }
+        tbody{
+            color: aqua;
         }
     </style>
 </head>
